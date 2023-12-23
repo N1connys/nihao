@@ -119,3 +119,30 @@ git branch -M main
 指定分支名称位main
 git push -u origin main 
 将本地的main分支与远程分支的main关联起来
+
+```
+一些问题
+将本地文件提交到远程仓库的时候git push -u origin main的时候报错
+1 检查一下是否默认分支是master不是main
+将本地分支的名称改成main
+git branch -M main
+2 本地文件和远程仓库文件有冲突，比如远程仓库有readme文件本地没有
+需要使用git pull合并一下
+如果合并也报错那就需要
+git pull origin main --allow-unrelated-histories
+这样就可以了
+然后再git push 一下就行
+
+如果本地文件变更怎么提交到远程仓库呢？
+git add .
+git commit -m
+git push -u origin main 
+```
+
+遇到一些网络问题（挂了代理）
+在 git push的时候出现Https什么玩意超时啊什么的
+这种一般情况下就是没有设置代理。
+去找一下设置里面的代理找到你的IP地址和端口号
+git config --global http.proxy 'socks5://127.0.0.1:1080'
+git config --global https.proxy 'socks5://127.0.0.1:1080'
+然后更改一下就可以了
