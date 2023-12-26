@@ -65,7 +65,7 @@ public class TelLogin extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 userid = unField.getText();
                 password = pwField.getText();
-                if(userid.equals("gz")&&password.equals("111")) {
+                if(userid.equals("")&&password.equals("")) {
                     self.setVisible(false);
 //                    JOptionPane.showMessageDialog(null, "登录成功", "登录情况",JOptionPane.PLAIN_MESSAGE);
                     new TelManager();

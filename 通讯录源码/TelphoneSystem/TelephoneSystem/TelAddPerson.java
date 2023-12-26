@@ -40,13 +40,26 @@ public class TelAddPerson extends JDialog implements ActionListener {
         jf4 = new JTextField(30);
         jf5 = new JTextField(30);
 
+        Color cjf1 =new Color(253,247,228);
+        Color cjf2 =new Color(253,247,228);
+        Color cjf3 =new Color(253,247,228);
+        Color cjf4 =new Color(253,247,228);
+        Color cjf5 =new Color(253,247,228);
+        jf1.setBackground(cjf1);
+        jf2.setBackground(cjf2);
+        jf3.setBackground(cjf3);
+        jf4.setBackground(cjf4);
+        jf5.setBackground(cjf5);
 
 
         jb1 = new JButton("添加");
         jb1.addActionListener(this::actionPerformed);
         jb2 = new JButton("取消");
         jb2.addActionListener(this::actionPerformed);
-
+        Color cjb1=new Color(222, 208, 182);
+        Color cjb2=new Color(222, 208, 182);
+        jb1.setBackground(cjb1);
+        jb2.setBackground(cjb2);
         jp1 = new JPanel();
         jp2 = new JPanel();
         jp3 = new JPanel();
@@ -71,13 +84,15 @@ public class TelAddPerson extends JDialog implements ActionListener {
         jp2.add(jf4);
         jp2.add(jf5);
 
-
+        jp1.setBackground(new Color(255, 247, 212));
         this.add(jp1, BorderLayout.WEST);
         this.add(jp2, BorderLayout.CENTER);
         this.add(jp3, BorderLayout.SOUTH);
-        this.setLocation(600, 350);
-        this.setSize(300,200);
+        this.setLocation(1200, 190);
+        this.setSize(600,400);
         this.setVisible(true);
+
+
     }
     @Override
     public void actionPerformed(ActionEvent e) {

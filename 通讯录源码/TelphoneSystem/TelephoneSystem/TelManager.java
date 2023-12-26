@@ -27,7 +27,13 @@ public class TelManager extends JFrame implements ActionListener {
     ResultSet rs = null;
     //构造函数
     public TelManager(){
-        Color jp1color=new Color(217, 210, 4);
+        Color cst = new Color(238, 231, 218);
+        searchType.setBackground(cst);
+        Color cjb1 = new Color(238, 231, 218);
+        Color cjb2 = new Color(238, 231, 218);
+        Color cjb3 = new Color(238, 231, 218);
+        Color cjb4 = new Color(239, 64, 64);
+        Color jp1color= new Color(198, 207, 155);
         jp1 = new JPanel();
         jp1.setBackground(jp1color);
         jtf1 = new JTextField(10);
@@ -51,10 +57,11 @@ public class TelManager extends JFrame implements ActionListener {
         jb4.addActionListener(this);
 
         jp2 = new JPanel();
+        Color customColor =new Color(198, 207, 155);
         jp2.add(jb2);
         jp2.add(jb3);
         jp2.add(jb4);
-        jp2.setBackground(Color.pink);
+        jp2.setBackground(customColor);
         //创建模型对象
         sm = new dataModel();
         //初始化总人数
@@ -62,6 +69,10 @@ public class TelManager extends JFrame implements ActionListener {
         jtf2.setText(strRS);
         //初始化表和滚动面板
         jt = new JTable(sm);
+        Color jtbg = new Color(250, 238, 209);
+
+        jt.setBackground(jtbg);
+        jt.setRowHeight(30);
         jsp = new JScrollPane(jt);
 
 
@@ -72,9 +83,19 @@ public class TelManager extends JFrame implements ActionListener {
         this.setTitle("通讯录管理系统");
 //        this.pack();
         this.setSize(600, 400);
+        Color guimana = new Color(210, 227, 200);
+        this.setBackground(guimana);
         this.setLocation(500, 200);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setVisible(true);
+
+        jb1.setBackground(cjb1);
+        jb2.setBackground(cjb2);
+        jb3.setBackground(cjb3);
+        jb4.setBackground(cjb4);
+
+        Color backgroundColor = new Color(253, 247, 228); // 使用RGB值创建颜色对象，对应颜色 #FDF7E4
+        this.getContentPane().setBackground(backgroundColor); // 设置窗口内容面板的背景色为自定义颜色
 
     }
     public void actionPerformed(ActionEvent arg0) {
